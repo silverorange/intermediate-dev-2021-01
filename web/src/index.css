@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  padding: 15px;
+}
+
+.repo {
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+}
+
+.button__container {
+  padding: 15px;
+}
+
+.button {
+  background-color: gray;
+  color: white;
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 0, 20px;
+}
+
+.button:hover {
+  background-color: lightgray;
+  color: #000;
+}

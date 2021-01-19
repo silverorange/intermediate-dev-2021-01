@@ -3,6 +3,7 @@ import { Repos } from './Repos';
 
 export function App() {
   const [fetchedRepos, setFetchedRepos] = useState([]);
+  const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
     async function fetchRepos() {
@@ -14,14 +15,18 @@ export function App() {
         return bb - aa;
       });
       setFetchedRepos(data);
+      const languagesSet = new Set(data.map((repo) => repo.language));
+      setLanguages(Array.from(languagesSet));
     }
 
     fetchRepos();
   }, []);
 
   return (
-    <div>
-      {fetchedRepos.length > 0 && <Repos fetchedRepos={fetchedRepos} />}
+    <div className="App">
+      {fetchedRepos.length > 0 && (
+        <Repos fetchedRepos={fetchedRepos} languages={languages} />
+      )}
     </div>
   );
 }
